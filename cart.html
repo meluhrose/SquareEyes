@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+    <meta name="description" content="A video streaming website where you can purchase high-quality videos directly from the people who make them.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Square Eyes</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/cart.css" rel="stylesheet" />
+    <link href="css/media.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anta&family=Anton+SC&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+<link rel="manifest" href="assets/site.webmanifest">
+<script src="https://kit.fontawesome.com/3f13ab78cf.js" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img alt="SquareEyes Logo" src="assets/SquareEyes_Logo.png" width="65" height="auto">
+            </a>
+        </div>
+        <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+      <input type="checkbox" id="hamburger-menu" />
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="videos.html">Videos</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+        <i class="fa-regular fa-user"></i>
+        <i class="fa-regular fa-heart"></i>
+        <a href="cart.html">
+            <i class="fa-solid fa-cart-shopping movie-toy"></i>
+        </a>
+    </header>
+    <main>
+        <div class="cartbox">
+            <div class="logo-cart">
+                <img src="assets/SquareEyes_Logo_checkout.png" alt="Logo for Square Eyes with glasses above the word Square">
+            </div>
+            <div class="cart-item">
+                <img src="assets/Square_Eyes_Cover8.jpeg">
+                <div class="cart-text">
+                    <p class="movie-title">Toy Story</p>
+                    <p>Subtotal: 99,99</p>
+                    <p class="shipping">Shipping Cost: Enter Shipping address</p>
+                    <p class="totalprice">Total: 99,99</p>
+                </div>
+            </div>
+            <div class="row">
+                    <div class="payment">
+                        <form action="/action_page.php">
+                            <div class="row">
+                                <div class="column50">
+                                    <h2>Payment Information</h2>
+                                    <label for="fname">Name On Card</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="Jane Doe">
+                                    <label for="ccnum"> Credit Card Number</label>
+                                    <input type="text" id="ccnum" name="cardnumber" placeholder="0000 0000 0000 0000">
+                                    <div class="row">
+                                        <div class="column50">
+                                            <label for="expmonth">Exp. Month</label>
+                                            <input type="text" id="exmonth" name="expmonth" placeholder="MM/YY" required>
+                                        </div>
+                                        <div class="column50">
+                                            <label for="sc">Security Code</label>
+                                            <input type="text" id="sc" name="sc" placeholder="***">
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <div class="column50">
+                                        <h2>shipping-information</h2>
+                                        <label for="add">Address</label>
+                                        <input type="text" name="address" id="add" placeholder="12 Drury Lane">
+                                        
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="column50">
+                                                <label for="pc">Postcode</label>
+                                                <input type="text" name="postcode" id="pc" placeholder="1234">
+                                            </div>
+                                            <div class="column50">
+                                                <label for="city">City</label>
+                                                <input type="text" name="city" id="City" placeholder="Houston">
+                                            </div>
+                                            <div class="column50">
+                                                <label for="state">State</label>
+                                                <input type="text" name="state" id="state" placeholder="Texas">
+                                            </div>
+                                            <div class="column50">
+                                                <label for="ctry">Country</label>
+                                                <input type="text" name="country" id="ctry" placeholder="USA">
+                                            </div>
+                                </div>
+                                <a href="cartsuccess.html" class=" cta paycta">Pay Now</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer>
+        <a href="https://www.instagram.com/">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://x.com/?lang=nb&mx=2">
+            <i class="fa-brands fa-twitter"></i>
+        </a>
+        <a href="https://www.youtube.com/">
+            <i class="fa-brands fa-youtube"></i>
+        </a>
+    </footer>
+</body>
+</html>

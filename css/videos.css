@@ -1,0 +1,26 @@
+.genres {
+    position: relative;
+    left: -20px;
+    top: -70px;
+    margin: 12px;
+  }
+  
+  .video-list {
+    background-color: rgba(217, 217, 217, 0.31);
+    max-width: 96%;
+    text-align: center;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    margin: 2%;
+    padding: 2%;
+  }
+  
+  .video-list img {
+    width: 200px;
+    height: 294px;
+    padding: 15px;
+  }
+  

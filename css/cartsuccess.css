@@ -1,0 +1,33 @@
+main {
+    background-image: url('../assets/checkout.jpg');
+    background-size: cover;
+	background-repeat: no-repeat;
+    background-position: center;
+    padding: 80px;
+    margin: 20px;
+}
+
+
+.cartbox {
+    background-color: rgba(243, 243, 243, 0.5);
+    color: black;
+    width: 95%;
+    height: fit-content;
+    display: flex;
+}
+
+.cart-success {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+
+.cta-success-1 {
+    position: absolute;
+    left: 110px;
+}
+
+.cta-succes-2 {
+    position: absolute;
+    right: 200px;
+}

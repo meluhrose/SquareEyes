@@ -1,0 +1,26 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+
+.cta {
+    font-family: var(--text-heading), sans-serif;
+    text-decoration: none;
+    background-color: #FFFBFB;
+    color:#585252;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    border: none;
+    padding: 5px 40px;
+    width: fit-content;
+    transition-property: background color;
+    transition-duration: 1s;
+  }
+  
+  .cta:hover {
+    background-color: #585252;
+    color:#FFFBFB;
+  }

@@ -1,0 +1,33 @@
+twocontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  }
+
+.contact_image img {
+  background-size: contain;
+  opacity: 0.7;
+  width: 620px;
+  height: 551px;
+  padding-right: 13px;
+}
+
+.form {
+  background-color: rgba(217, 217, 217, 0.31);
+  display: flex;
+  flex-direction: column;
+  width: 620px;
+  height: auto;
+  padding: 0px 15px 0px 20px;
+}
+
+.verification,
+.contact-info {
+ margin: 10px;
+ padding: 5px;
+}
+
+.contact-info {
+  text-align: center;
+}

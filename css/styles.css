@@ -1,0 +1,109 @@
+  @import "imports/links.css";
+  @import "imports/variables.css";
+
+  body {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #0C1B20;
+    color: #fff;
+    margin: 30px;
+    display: flexbox;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+h1 {
+    color: #fff;
+    font-family: "Anta", sans-serif;
+    font-weight: 50px;
+    font-size: 3em;
+    text-transform: uppercase;
+    font-style: normal;
+    position: sticky;
+}
+
+h3 {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-size: 1em;
+  font-style: normal;
+}
+
+p {
+  font-family: "Inter", sans-serif;
+}
+
+.logo {
+  position: sticky;
+  padding: 30px;
+}
+
+nav {
+  margin: 40px;
+  font-family: var(--text-heading), sans-serif;
+  color: #fff;
+  text-decoration: none;
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  top: 45px;
+}
+
+nav ul {
+  padding: 0px;
+  text-align : center;
+}
+
+nav li {
+    display: inline-block;
+    padding: 20px;
+  }
+
+  nav a {
+    font-family: var(--text-heading), sans-serif;
+    color: #fff;
+    text-decoration: none;
+  }
+
+nav a:hover {
+    text-decoration: underline;
+  }
+
+i {
+    padding: 10px;
+    margin: 5px;
+  }
+
+#hamburger-menu {
+    display: none;
+}
+
+#hamburger-menu:checked ~ nav {
+    display: block;
+}
+
+.form__input {
+  display: block;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 80px;
+}
+
+.fa-brands {
+  display: flex;
+  justify-content: center;
+}
+
+.movie-toy,
+.fa-brands {
+  font-family: var(--text-heading), sans-serif;
+  color: #fff;
+  font-weight: lighter;
+  text-decoration: none;
+}

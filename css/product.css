@@ -1,0 +1,21 @@
+.productpage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+  
+  .product-info {
+    text-align: center;
+    margin: 40px;
+  }
+  
+  .product-synopsis{
+    text-align: left;
+  }
+  
+  .rating {
+    font-weight: bold;
+  }
+  

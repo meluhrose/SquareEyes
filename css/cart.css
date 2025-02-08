@@ -1,0 +1,109 @@
+main {
+    background-image: url('../assets/checkout.jpg');
+    background-size: cover;
+	background-repeat:space;
+    background-position: center;
+    padding: 80px;
+    margin: 20px;
+}
+
+h2 {
+    font-family: var(--text-heading), sans-serif;
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+
+}
+
+p {
+    color: #000;
+    line-height: 8px;
+}
+
+label{
+    display: block;
+}
+
+input[type=text] {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+.cartbox {
+    background-color: rgba(243, 243, 243, 0.5);
+    width: 95%;
+    height: 100%;
+}
+
+.logo-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+
+.logo-cart img {
+    width: 30%;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.cart-item img{
+    max-width: 150px;
+    height: auto;
+    padding-right: 30px;
+
+}
+
+.cart-text {
+    display: flex;
+    flex-direction: column;
+    overflow:scroll;
+    text-overflow:ellipsis;
+}
+
+.movie-title {
+    font-size: 24px;
+    text-wrap: wrap;
+}
+
+.movie-title,
+.totalprice {
+    font-weight: bold;
+}
+
+.shipping {
+    line-height: 18px;
+}
+
+.payment {
+
+    padding: 20px;
+    margin: 60px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -16px;
+}
+
+.column50 {
+    flex: 40%;
+    padding: 0 16px;
+
+}
+
+.paycta {
+position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+}
