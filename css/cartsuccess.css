@@ -3,31 +3,42 @@ main {
     background-size: cover;
 	background-repeat: no-repeat;
     background-position: center;
+    height: 100%;
     padding: 80px;
     margin: 20px;
 }
 
+h1 {
+    color: #000;
+}
 
-.cartbox {
+
+h2 {
+    color: #000;
+    font-family: "Inter", serif;
+    font-size: 20px;
+    font-weight: normal;
+    padding: 2px 3px;
+}
+
+
+.successbox {
     background-color: rgba(243, 243, 243, 0.5);
-    color: black;
-    width: 95%;
-    height: fit-content;
+    width: 96%;
+    height: 100%;
+    padding: 20px;
+}
+
+    .success-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+
+.success-cta {
     display: flex;
-}
-
-.cart-success {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-}
-
-.cta-success-1 {
-    position: absolute;
-    left: 110px;
-}
-
-.cta-succes-2 {
-    position: absolute;
-    right: 200px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }

@@ -38,8 +38,12 @@
     nav li {
       display: inline-block;
     }
-    
+
+    .paycta {
+      bottom: -30px;
+      left: -89px;
   }
+}
   
   @media (max-width: 800px) {
   
@@ -89,14 +93,25 @@
   }
   
   @media (max-width: 700px) {
+
+    .feature-information {
+      flex-direction: column;
+    }
+
+    .feature-information img {
+      width: 40%;
+
+    }
   
     .feature-text {
       width: 310px;
       height: 305px;
     }
+
+    
   
     .synopsis {
-      font-size: 14px;
+      font-size: 12px;
     }
   
     .video-list {
@@ -116,5 +131,25 @@
         right: -22%;
         top: 5%;
     }
-  
+
+    .success-cta {
+      justify-content: space-around;
+    }
+
+    .paycta {
+      right: -85px;
+    }
   }
+
+  @media (max-width: 600px) { 
+
+    .success-cta {
+      white-space: nowrap;
+      flex-direction: column;
+    }
+
+    .success-header {
+      font-size: 35px;
+    }
+  }
+  

@@ -10,8 +10,8 @@
   }
 
 .feature img {
-  height: 344px;
-  width: 220px;
+  width: 32%;
+  height: 10%;
   }
 
   .titles {
@@ -26,6 +26,7 @@
 
 .feature-information {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
   word-wrap: normal;
@@ -51,6 +52,8 @@
 
 .synopsis {
   font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .price {

@@ -46,7 +46,8 @@ input[type=text] {
 }
 
 .logo-cart img {
-    width: 30%;
+    width: 16%;
+    height: auto;
 }
 
 .cart-item {
@@ -65,7 +66,6 @@ input[type=text] {
 .cart-text {
     display: flex;
     flex-direction: column;
-    overflow:scroll;
     text-overflow:ellipsis;
 }
 
@@ -91,6 +91,7 @@ input[type=text] {
 
 .row {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     margin: 0 -16px;
 }
@@ -102,8 +103,7 @@ input[type=text] {
 }
 
 .paycta {
-position: fixed;
-  bottom: 0;
-  right: 0;
-  width: 300px;
+    position: relative;
+    bottom: -30px;
+    right: 74px;
 }
