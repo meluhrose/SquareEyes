@@ -77,9 +77,13 @@
     }
   
     .contact_image img {
-      width: 662px;
+      width: 637px;
+      height: fit-content;
       padding-right: 0px;
     }
+
+    .form {
+    width: 606px;}
   
     .productpage {
       flex-direction: column;
@@ -184,6 +188,12 @@
     .paycta {
       left: 25%;
     }
+    .form {
+      width: 372px;
+    }
+    .contact_image img {
+      width: 409px;
+      height: fit-content;
   }
 
   @media (max-width: 400px) {
@@ -198,4 +208,4 @@
     .connectingheader {
       font-size: 16px;
   }
-  }
+}
