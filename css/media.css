@@ -107,7 +107,6 @@
 
     .feature-information img {
       width: 40%;
-
     }
   
     .feature-text {
@@ -194,8 +193,9 @@
     }
     .contact_image img {
       width: 409px;
-      height: fit-content;
+      height: 275px;
   }
+}
 
   @media (max-width: 400px) {
     .paycta {
@@ -208,5 +208,6 @@
 
     .connectingheader {
       font-size: 16px;
+    }
   }
-}
+  
