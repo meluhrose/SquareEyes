@@ -77,13 +77,14 @@
     }
   
     .contact_image img {
-      width: 637px;
-      height: fit-content;
-      padding-right: 0px;
+      width: 624px;
+      height: 50%;
+      padding: 0%;
     }
 
     .form {
-    width: 606px;}
+    width: 590px;;
+  }
   
     .productpage {
       flex-direction: column;
