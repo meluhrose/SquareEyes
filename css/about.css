@@ -25,7 +25,7 @@
     background-color: rgba(217, 217, 217, 0.31);
     text-align: left;
     max-width: 1029px;
-    max-height: 517px;
+    max-height: fit-content;
     padding: 95px;
     margin: 2px;
   }
