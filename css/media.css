@@ -17,7 +17,10 @@
       padding: 70px;
       margin: 2px;
       }
-    
+
+      .twocontainer {
+        flex-direction: column;
+      }
   }
   
   @media (min-width: 800px) {
@@ -108,8 +111,6 @@
       height: 305px;
     }
 
-    
-  
     .synopsis {
       font-size: 12px;
     }
@@ -137,7 +138,7 @@
     }
 
     .paycta {
-      right: -85px;
+      right: 88px;
     }
   }
 
@@ -151,5 +152,36 @@
     .success-header {
       font-size: 35px;
     }
+
+    .cart-item {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .cart-item img {
+      width: 100px;
+    }
+
+    .paycta {
+      right: 50%;
+      white-space: nowrap;
+    }
+
+    .row {
+      margin: -16px;
+    }
   }
-  
+
+  @media (max-width: 500px) {
+    
+    .paycta {
+      left: 25%;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .paycta {
+      left: 5%;
+    }
+  }
