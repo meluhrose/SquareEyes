@@ -164,6 +164,7 @@
 
     .cart-item img {
       width: 100px;
+      padding-right: 0px;
     }
 
     .paycta {
