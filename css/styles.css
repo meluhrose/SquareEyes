@@ -82,6 +82,7 @@ i {
 
 #hamburger-menu:checked ~ nav {
     display: block;
+    white-space: nowrap;
 }
 
 .form__input {

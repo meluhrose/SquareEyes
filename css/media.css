@@ -1,14 +1,14 @@
 @media (max-width: 1000px) {
 
     .AboutConnect {
-      width: 587px;
+      width: 488px;
       height: 234px;
       padding: 35px;
       margin: 15px;
     }
     
      .connectingheader {
-        font-size: 40px;
+        font-size: 27px;
       }
     
      .AboutInfo {
@@ -106,7 +106,7 @@
     }
   
     .feature-text {
-      width: 310px;
+      width: 229px;
       height: 305px;
     }
 
@@ -173,6 +173,9 @@
   }
 
   @media (max-width: 500px) {
+    h1 {
+      position: relative;
+      font-size: 31px;}
     
     .paycta {
       left: 25%;
