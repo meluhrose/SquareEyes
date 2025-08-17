@@ -5,20 +5,19 @@
     margin: 12px;
   }
   
-  .container {
+  .video-list {
     background-color: rgba(217, 217, 217, 0.31);
-    max-width: 96%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    gap: 25px;
     text-align: center;
     white-space: nowrap;
-    display: flex;
-    align-items: center;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
     margin: 2%;
     padding: 2%;
   }
   
-  .container img {
+  .video-list img {
     width: 200px;
     height: 294px;
     padding: 15px;

@@ -17,6 +17,7 @@
         <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
         <link rel="manifest" href="assets/site.webmanifest">
         <script src="https://kit.fontawesome.com/3f13ab78cf.js" crossorigin="anonymous"></script>
+        <script src="js/script.js"></script>
     </head>
     <body>
         <header>
@@ -25,7 +26,7 @@
                     <img border="0" alt="SquareEyes Logo" src="assets/SquareEyes_Logo.png" width="65" height="auto">
                 </a>
             </div>
-            <label for="hamburger-menu"><i class="fas fa-bars"></i></label>
+            <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></i></label>
             <input type="checkbox" id="hamburger-menu" />
             <nav>
                 <ul>
@@ -36,13 +37,13 @@
                 </ul>
             </nav>
             <form action="/search" method="get">
-                <input type="search" id="search-bar" name="query" placeholder="Search...">
-                <button type="submit" class="cta">Search</button>
+                 <input type="search" id="search-bar" name="query" placeholder="Search...">
+                 <button type="submit" class="cta">Search</button>
             </form>
             <i class="fa-regular fa-user"></i>
             <i class="fa-regular fa-heart"></i>
             <a href="cart.html">
-                <i class="fa-solid fa-cart-shopping movie-toy"></i>
+                <i class="fa-solid fa-cart-shopping movie-title"></i>
             </a>
         </header>
         <main>
@@ -59,31 +60,14 @@
                             <p>25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past.</p>
                         </div>
                         <p class="price">99,99</p>
-                    <a href="cart.html" class="cta">Add To Cart</a>
+                    <a href="cart.html" class="cta add-to-cart">Add To Cart</a>
                         </div>
                         </div>
             </section>
             <section>
                 <h1 class="titles-top">Top Streaming</h1>
-                <div class="top-streaming">
-                    <div>
-                        <a href="products/product.html">
-                            <img src="assets/Square_Eyes_Cover2.jpeg" alt="The movie cover Godzilla">
-                            <p class="movie movie-toy">Godzilla</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="products/product.html">
-                            <img src="assets/Square_Eyes_Cover5.jpeg" alt="The movie cover Sweetheart">
-                            <p class="movie movie-toy">Sweetheart</p>
-                        </a>
-                    </div>
-                    <div>
-                        <a href="products/product.html">
-                            <img src="assets/Square_Eyes_Cover8.jpeg" alt="The movie cover Toy Story 4">
-                            <p class="movie movie-toy">Toy Story 4</p>
-                        </a>
-                    </div>
+                <div id="list-container" class="top-streaming">
+                    
                 </div>
             </section>
             </main>
@@ -98,6 +82,5 @@
                 <i class="fa-brands fa-youtube"></i>
             </a>
         </footer>
-        <script src="js/script.js"></script>
     </body>
 </html>
