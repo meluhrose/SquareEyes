@@ -1,36 +1,44 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const dataContainer = document.getElementById("list-container");
+    const API_URL = "https://v2.api.noroff.dev/square-eyes";
 
-const container = document.querySelector("#container")
-const API_URL = "https://v2.api.noroff.dev/square-eyes" 
+    async function fetchData() {
+        try {
+            const response = await fetch(API_URL);
 
-async function fetchData() {
-    try {
-        const response = await fetch(API_URL)
-        const data = await response.json()  
-        const products = data.data
+            if (!response.ok) {
+                throw new Error("HTTP error! status: ${response.status}");
+            }
 
-        products.forEach(product => {
-            const card = document.createElement("div")
-            const image = document.createElement("img")
-            const content = document.createElement("div")
-            const title = document.createElement("h2")
-            const price = document.createElement("p")
+            const result = await response.json();
+            const data = result.data;
+            
 
-            image.src = product.image.url
-            image.alt = product.image.alt
-            title.textContent = product.title
-            price.textContent = product.price
+            data.forEach(product => {
+                const itemDiv = document.createElement("div");
+                itemDiv.classList.add("item");
 
-            content.appendChild(title)
-            content.appendChild(price)
-            card.appendChild(image)
-            card.appendChild(content) 
+                const img = document.createElement("img");
+                img.src = product.image.url;
 
-            container.appendChild(card)
-        })
+                itemDiv.appendChild(img);
+                dataContainer.appendChild(itemDiv);
+            });
 
-    } catch (error) {
-        console.error("Error fetching data", error)    
+        } catch (error) {
+            console.error("Error fetching or rendering data:", error);
+            dataContainer.textContent = "Failed to load data. Please try again later.";
+        }
     }
-}       
 
-fetchData()
+    fetchData();
+});
+
+
+    const addToCartButtons = document.querySelectorAll("add-to-cart");
+
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+
+        });
+    });
