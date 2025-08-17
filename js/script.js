@@ -21,12 +21,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 const img = document.createElement("img");
                 img.src = product.image.url;
 
+                const title = document.createElement("h3");
+                title.textContent = product.title;
+                itemDiv.appendChild(title);
+
                 itemDiv.appendChild(img);
                 dataContainer.appendChild(itemDiv);
             });
 
         } catch (error) {
-            console.error("Error fetching or rendering data:", error);
+            console.error("Error fetching data:", error);
             dataContainer.textContent = "Failed to load data. Please try again later.";
         }
     }
