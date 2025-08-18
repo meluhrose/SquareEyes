@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const title = document.createElement("h3");
                 title.textContent = product.title;
-                itemDiv.appendChild(title);
 
-                itemDiv.appendChild(img);
                 dataContainer.appendChild(itemDiv);
+                itemDiv.appendChild(img);
+                itemDiv.appendChild(title);
             });
 
         } catch (error) {
