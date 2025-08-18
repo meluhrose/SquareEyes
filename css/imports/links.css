@@ -5,7 +5,7 @@ header {
     padding: 10px;
   }
 
-.cta {
+.cta{
     font-family: var(--text-heading), sans-serif;
     text-decoration: none;
     background-color: #FFFBFB;

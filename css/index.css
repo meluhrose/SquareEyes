@@ -70,6 +70,10 @@
 
 }
 
+.top-streaming {
+  text-align: center;
+}
+
 .top-streaming,
 .movie-title {
   display: grid;
