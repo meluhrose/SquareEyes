@@ -54,46 +54,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
 var genres = [
 
+    {name: "All"},
     {name: "Action"},
-    {name: "Family"},
+    {name: "Kids"},
+    {name: "Horror"},
     {name: "Comedy"},
     {name: "Drama"},
 ];
 
 var genreContainer = document.getElementById("genre-container");
 
-for (var i = 0; i < genres.length; i++) {
+
+for (let i = 0; i < genres.length; i++) {
     var genreDiv = document.createElement("div");
     genreDiv.classList.add("genre");
 
     var genreName = document.createElement("button");
     genreName.textContent = genres[i].name;
-    genreName.onclick = async () => {
-        await filterVideosByGenre(this.textContent)
-    }
+    genreName.onclick = async function() {
+        await filterVideosByGenre(this.textContent);
+    };
 
     genreDiv.appendChild(genreName);
     genreContainer.appendChild(genreDiv);
 }
 
-
-
-async function filterVideosByGenre(genre){
+async function filterVideosByGenre(genre) {
     var response = await fetch(API_URL);
-
     var result = await response.json();
     var data = result.data;
 
     var dataContainer = document.getElementById("list-container");
-
-    var containerDiv = document.createElement("div");
+    dataContainer.innerHTML = ""; 
 
     data.forEach(product => {
 
-        if (product.genre !== genre){
-            return ;
+        if (genre !== "All") {
+
+            let productGenres = [];
+            if (Array.isArray(product.genre)) {
+                productGenres = product.genre;
+            } else if (typeof product.genre === "string") {
+                productGenres = [product.genre];
+            }
+
+            if (
+                !productGenres.length ||
+                !productGenres.map(g => g.toLowerCase()).includes(genre.toLowerCase())
+            ) {
+                return;
+            }
         }
-        
+
         var itemDiv = document.createElement("div");
         itemDiv.classList.add("item");
 
@@ -110,7 +122,7 @@ async function filterVideosByGenre(genre){
         alt.textContent = product.image.alt;
 
         var href = document.createElement("a");
-        href.href = "../products/product.html"
+        href.href = "../products/product.html";
         href.textContent = "View Product";
 
         itemDiv.appendChild(img);
@@ -119,10 +131,8 @@ async function filterVideosByGenre(genre){
         itemDiv.appendChild(alt);
         itemDiv.appendChild(href);
 
-        containerDiv.appendChild(itemDiv)
+        dataContainer.appendChild(itemDiv);
     });
 
-    dataContainer.appendChild(containerDiv);
-
-    console.log("test");
+    console.log("Filtered by genre:", genre);
 }
