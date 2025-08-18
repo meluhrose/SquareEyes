@@ -1,4 +1,4 @@
-const API_URL = "https://v2.api.noroff.dev/square-eyes";
+const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
 document.addEventListener("DOMContentLoaded", () => {
     const dataContainer = document.getElementById("list-container");
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(API_URL);
 
             if (!response.ok) {
-                throw new Error("HTTP error! status: ${response.status}");
+                throw new Error("HTTP error! status: {response.status}");
             }
 
             const result = await response.json();
@@ -16,27 +16,31 @@ document.addEventListener("DOMContentLoaded", () => {
             
 
             data.forEach(product => {
-                const itemDiv = document.createElement("div");
+                var itemDiv = document.createElement("div");
                 itemDiv.classList.add("item");
 
-                const img = document.createElement("img");
+                var imgLink = document.createElement("a");
+                imgLink.href = "../products/product.html?id="+product.id;
+                var img = document.createElement("img");
                 img.src = product.image.url;
+                img.alt = product.image.alt;
+                imgLink.appendChild(img);
 
-                const title = document.createElement("h3");
+                var title = document.createElement("h3");
                 title.textContent = product.title;
 
-                const price = document.createElement("h3");
+                var price = document.createElement("h3");
                 price.textContent = product.price;
 
-                const alt = document.createElement("h3");
+                var alt = document.createElement("h3");
                 alt.textContent = product.image.alt;
 
-                const href = document.createElement("a");
+                var href = document.createElement("a");
                 href.href = "../products/product.html"
                 href.textContent = "View Product";
 
                 dataContainer.appendChild(itemDiv);
-                itemDiv.appendChild(img);
+                itemDiv.appendChild(imgLink);
                 itemDiv.appendChild(title);
                 itemDiv.appendChild(price);
                 itemDiv.appendChild(alt);
@@ -109,8 +113,12 @@ async function filterVideosByGenre(genre) {
         var itemDiv = document.createElement("div");
         itemDiv.classList.add("item");
 
-        var img = document.createElement("img");
-        img.src = product.image.url;
+        var imgLink = document.createElement("a");
+            imgLink.href = "../products/product.html?id=${product.id}";
+            var img = document.createElement("img");
+            img.src = product.image.url;
+            img.alt = product.image.alt;
+            imgLink.appendChild(img);
 
         var title = document.createElement("h3");
         title.textContent = product.title;
@@ -125,7 +133,7 @@ async function filterVideosByGenre(genre) {
         href.href = "../products/product.html";
         href.textContent = "View Product";
 
-        itemDiv.appendChild(img);
+        itemDiv.appendChild(imgLink);
         itemDiv.appendChild(title);
         itemDiv.appendChild(price);
         itemDiv.appendChild(alt);
