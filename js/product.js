@@ -14,8 +14,8 @@ function getProductIdFromUrl() {
         productInfo.innerHTML = "<p>Product not found.</p>";
         return;
     }
-
-    const API_URL = "https://v2.api.noroff.dev/square-eyes/"+productId;
+    
+    const API_URL = "https://v2.api.noroff.dev/square-eyes/" + productId;
 
    async function fetchProduct() {
         try {
@@ -24,19 +24,19 @@ function getProductIdFromUrl() {
             const product = result.data;
 
             if (!product) {
-                productInfo.innerHTML = "<p>Product not found in API.</p>";
+                productInfo.innerHTML = "<p>Product not found.</p>";
                 return;
             }
 
             productInfo.innerHTML = `
-                <div class="product">
+                <div class="product-info">
                     <a href="${product.image.url}" target="_blank">
-                        <img src="${product.image.url}" alt="${product.image.alt}" class="product-image" />
+                        <img src="${product.image.url}" alt="${product.image.alt}">
                     </a>
-                    <h2 class="product-title">${product.title}</h2>
-                    <p class="product-description">${product.description}</p>
-                    <p class="product-price">$${product.price}</p>
-                    <button id="add-to-cart-btn">Add to Cart</button>
+                    <h2>${product.title}</h2>
+                    <p>${product.description}</p>
+                    <p>$${product.price}</p>
+                    <button id="add-to-cart-btn" class="cta">Add to Cart</button>
                 </div>
             `;
 
