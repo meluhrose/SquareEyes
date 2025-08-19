@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
 function getProductIdFromUrl() {
     const params = new URLSearchParams(window.location.search);

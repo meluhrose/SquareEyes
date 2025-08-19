@@ -41,7 +41,7 @@ input[type=text] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 8px;
+    padding: 2px;
 }
 
 .logo-cart img {
@@ -51,8 +51,7 @@ input[type=text] {
 
 .cart-item {
     display: flex;
-    justify-content: center;
-    margin: 15px;
+    justify-content: space-evenly;
 }
 
 .cart-item img{
