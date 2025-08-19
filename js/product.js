@@ -22,7 +22,7 @@ function getProductIdFromUrl() {
             const product = result.data;
 
             if (!product) {
-                productInfo.innerHTML = "<p>Product not found.</p>";
+                productInfo.innerHTML = "<p>Product not found in api.</p>";
                 return;
             }
 

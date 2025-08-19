@@ -36,15 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 alt.textContent = product.image.alt;
 
                 var href = document.createElement("a");
-                href.href = "../products/product.html"
+                href.href = "../products/product.html?id="+product.id;
                 href.textContent = "View Product";
+                
 
-                dataContainer.appendChild(itemDiv);
                 itemDiv.appendChild(imgLink);
                 itemDiv.appendChild(title);
                 itemDiv.appendChild(price);
                 itemDiv.appendChild(alt);
                 itemDiv.appendChild(href);
+
+                dataContainer.appendChild(itemDiv);
             });
 
         } catch (error) {
@@ -114,7 +116,7 @@ async function filterVideosByGenre(genre) {
         itemDiv.classList.add("item");
 
         var imgLink = document.createElement("a");
-            imgLink.href = "../products/product.html?id=${product.id}";
+            imgLink.href = "../products/product.html?id="+product.id;
             var img = document.createElement("img");
             img.src = product.image.url;
             img.alt = product.image.alt;
@@ -130,7 +132,7 @@ async function filterVideosByGenre(genre) {
         alt.textContent = product.image.alt;
 
         var href = document.createElement("a");
-        href.href = "../products/product.html";
+        href.href = "../products/product.html?id="+product.id;
         href.textContent = "View Product";
 
         itemDiv.appendChild(imgLink);

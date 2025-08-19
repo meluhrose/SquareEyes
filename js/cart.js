@@ -7,3 +7,4 @@ for (var i = 0; i < removeCartItemButtons.length; i++) {
         buttonClicked.parentElement.remove()
         })
 }
+
