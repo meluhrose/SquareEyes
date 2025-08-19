@@ -41,7 +41,7 @@ input[type=text] {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2px;
+    padding: 8px;
 }
 
 .logo-cart img {
@@ -51,7 +51,8 @@ input[type=text] {
 
 .cart-item {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    margin: 15px;
 }
 
 .cart-item img{
@@ -64,7 +65,7 @@ input[type=text] {
 .cart-text {
     display: flex;
     flex-direction: column;
-    text-overflow:ellipsis;
+    text-overflow:ellipsis
 }
 
 .movie-title {
