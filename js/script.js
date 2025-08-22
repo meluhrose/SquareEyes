@@ -16,26 +16,26 @@ document.addEventListener("DOMContentLoaded", () => {
             
 
             data.forEach(product => {
-                var itemDiv = document.createElement("div");
+                const itemDiv = document.createElement("div");
                 itemDiv.classList.add("item");
 
-                var imgLink = document.createElement("a");
+                const imgLink = document.createElement("a");
                 imgLink.href = "../products/product.html?id="+product.id;
-                var img = document.createElement("img");
+                const img = document.createElement("img");
                 img.src = product.image.url;
                 img.alt = product.image.alt;
                 imgLink.appendChild(img);
 
-                var title = document.createElement("h3");
+                const title = document.createElement("h3");
                 title.textContent = product.title;
 
-                var price = document.createElement("h3");
+                const price = document.createElement("h3");
                 price.textContent = product.price;
 
-                var alt = document.createElement("h3");
+                const alt = document.createElement("h3");
                 alt.textContent = product.image.alt;
 
-                var href = document.createElement("a");
+                const href = document.createElement("a");
                 href.href = "../products/product.html?id="+product.id;
                 href.textContent = "View Product";
                 
@@ -57,92 +57,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchData();
 }); 
-
-var genres = [
-
-    {name: "All"},
-    {name: "Action"},
-    {name: "Kids"},
-    {name: "Horror"},
-    {name: "Comedy"},
-    {name: "Drama"},
-];
-
-var genreContainer = document.getElementById("genre-container");
-
-
-for (let i = 0; i < genres.length; i++) {
-    var genreDiv = document.createElement("div");
-    genreDiv.classList.add("genre");
-
-    var genreName = document.createElement("button");
-    genreName.textContent = genres[i].name;
-    genreName.onclick = async function() {
-        await filterVideosByGenre(this.textContent);
-    };
-
-    genreDiv.appendChild(genreName);
-    genreContainer.appendChild(genreDiv);
-}
-
-async function filterVideosByGenre(genre) {
-    var response = await fetch(API_URL);
-    var result = await response.json();
-    var data = result.data;
-
-    var dataContainer = document.getElementById("list-container");
-    dataContainer.innerHTML = ""; 
-
-    data.forEach(product => {
-
-        if (genre !== "All") {
-
-            let productGenres = [];
-            if (Array.isArray(product.genre)) {
-                productGenres = product.genre;
-            } else if (typeof product.genre === "string") {
-                productGenres = [product.genre];
-            }
-
-            if (
-                !productGenres.length ||
-                !productGenres.map(g => g.toLowerCase()).includes(genre.toLowerCase())
-            ) {
-                return;
-            }
-        }
-
-        var itemDiv = document.createElement("div");
-        itemDiv.classList.add("item");
-
-        var imgLink = document.createElement("a");
-            imgLink.href = "../products/product.html?id="+product.id;
-            var img = document.createElement("img");
-            img.src = product.image.url;
-            img.alt = product.image.alt;
-            imgLink.appendChild(img);
-
-        var title = document.createElement("h3");
-        title.textContent = product.title;
-
-        var price = document.createElement("h3");
-        price.textContent = product.price;
-
-        var alt = document.createElement("h3");
-        alt.textContent = product.image.alt;
-
-        var href = document.createElement("a");
-        href.href = "../products/product.html?id="+product.id;
-        href.textContent = "View Product";
-
-        itemDiv.appendChild(imgLink);
-        itemDiv.appendChild(title);
-        itemDiv.appendChild(price);
-        itemDiv.appendChild(alt);
-        itemDiv.appendChild(href);
-
-        dataContainer.appendChild(itemDiv);
-    });
-
-    console.log("Filtered by genre:", genre);
-}
