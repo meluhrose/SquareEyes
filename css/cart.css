@@ -78,10 +78,6 @@ input[type=text] {
     font-weight: bold;
 }
 
-.shipping {
-    line-height: 18px;
-}
-
 .payment {
 
     padding: 20px;
@@ -99,10 +95,4 @@ input[type=text] {
     flex: 40%;
     padding: 0 16px;
 
-}
-
-.paycta {
-    position: relative;
-    bottom: -30px;
-    right: 74px;
 }

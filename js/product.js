@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
+    
 function getProductIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
     return params.get("id");
 
 }
 
-    const productInfo = document.getElementById("productpage");
+    const productInfo = document.getElementById("productinfo");
     const productId = getProductIdFromUrl();
 
     if (!productId) {
-        productInfo.innerHTML = "<p>Product not found.</p>";
-        return;
+            productInfo.innerHTML = "<p>Product not found.</p>";
+            return;
     }
     
     const API_URL = "https://v2.api.noroff.dev/square-eyes/" + productId;
@@ -21,7 +22,7 @@ function getProductIdFromUrl() {
             const result = await response.json();
             const product = result.data;
 
-            if (!product) {
+        if (!product) {
                 productInfo.innerHTML = "<p>Product not found in api.</p>";
                 return;
             }
@@ -39,12 +40,9 @@ function getProductIdFromUrl() {
             `;
 
             document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-                let cart = JSON.parse(localStorage.getItem("cart")) || [];
+                const cart = JSON.parse(localStorage.getItem("cartbox")) || [];
                 cart.push({
-                    id: product.id,
                     title: product.title,
-                    price: product.price,
-                    image: product.image.url
                 });
                 localStorage.setItem("cart", JSON.stringify(cart));
                 alert(`${product.title} added to cart!`);
