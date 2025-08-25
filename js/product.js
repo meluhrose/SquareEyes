@@ -1,34 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-function getProductIdFromUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("id");
+const API_URL = "https://v2.api.noroff.dev/square-eyes/"
 
+document.addEventListener("DOMContentLoaded", async () => {
+    await fetchProduct();
+    addAddToCartButtonEventListener();
+});
+
+function getProductIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get("id");
 }
 
-    const productInfo = document.getElementById("productinfo");
-    const productId = getProductIdFromUrl();
-
-    if (!productId) {
-            productInfo.innerHTML = "<p>Product not found.</p>";
-            return;
-    }
-    
-    const API_URL = "https://v2.api.noroff.dev/square-eyes/" + productId;
-
-   async function fetchProduct() {
+async function fetchProduct() {
         try {
-            const response = await fetch(API_URL);
+            const productInfo = document.getElementById("productinfo");
+            const productId = getProductIdFromUrl();
+
+            if (!productId) {
+              productInfo.innerHTML = "<p>Product not found.</p>";
+              return;
+            }
+
+            const response = await fetch(API_URL + productId);
             const result = await response.json();
             const product = result.data;
 
-        if (!product) {
-                productInfo.innerHTML = "<p>Product not found in api.</p>";
-                return;
-            }
 
             productInfo.innerHTML = `
-                <div class="product-info">
+                <div>
                     <a href="${product.image.url}" target="_blank">
                         <img src="${product.image.url}" alt="${product.image.alt}">
                     </a>
@@ -38,22 +36,38 @@ function getProductIdFromUrl() {
                     <button id="add-to-cart-btn" class="cta">Add to Cart</button>
                 </div>
             `;
-
-            document.getElementById("add-to-cart-btn").addEventListener("click", () => {
-                const cart = JSON.parse(localStorage.getItem("cartbox")) || [];
-                cart.push({
-                    title: product.title,
-                });
-                localStorage.setItem("cart", JSON.stringify(cart));
-                alert(`${product.title} added to cart!`);
-            });
-        } catch (error) {
+        } 
+        catch (error) {
             productInfo.innerHTML = "<p>Failed to load product.</p>";
             console.error("Fetch error:", error);
         }
     }
 
-    console.log("API_URL", API_URL);
+function addAddToCartButtonEventListener(){ // TODO: Rename this
+  document.getElementById("add-to-cart-btn").addEventListener("click", () => {
 
-    fetchProduct();
-});
+  var productId = getProductIdFromUrl();
+
+  if (productId == "" || productId === null){
+    console.log("id empty")
+    // Handle this
+    return;
+  }
+
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+  if (cart.some((id) => id === productId)){
+    console.log("item already exists in cart")
+    // Handle this
+    return;
+  }
+
+  cart.push(productId);
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+
+  console.log("asklujfghsdukfgisd");
+})
+}
+
+
