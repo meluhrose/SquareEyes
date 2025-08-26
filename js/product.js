@@ -2,7 +2,7 @@ const API_URL = "https://v2.api.noroff.dev/square-eyes/"
 
 document.addEventListener("DOMContentLoaded", async () => {
     await fetchProduct();
-    addAddToCartButtonEventListener();
+    addItemToCartButton();
 });
 
 function getProductIdFromUrl() {
@@ -43,7 +43,7 @@ async function fetchProduct() {
         }
     }
 
-function addAddToCartButtonEventListener(){ // TODO: Rename this
+function addItemToCartButton(){ 
   document.getElementById("add-to-cart-btn").addEventListener("click", () => {
 
   var productId = getProductIdFromUrl();
