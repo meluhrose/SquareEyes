@@ -24,7 +24,6 @@ async function fetchProduct() {
             const result = await response.json();
             const product = result.data;
 
-
             productInfo.innerHTML = `
                 <div>
                     <a href="${product.image.url}" target="_blank">
@@ -45,6 +44,7 @@ async function fetchProduct() {
 
 function addItemToCartButton(){ 
   document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+  
 
   var productId = getProductIdFromUrl();
 
@@ -57,7 +57,7 @@ function addItemToCartButton(){
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
   if (cart.some((id) => id === productId)){
-    console.log("item already exists in cart")
+    button.textContent = "Clicked!"
     // Handle this
     return;
   }
@@ -66,7 +66,6 @@ function addItemToCartButton(){
 
   localStorage.setItem('cart', JSON.stringify(cart));
 
-  console.log("asklujfghsdukfgisd");
 })
 }
 
