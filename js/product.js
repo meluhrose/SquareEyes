@@ -43,30 +43,31 @@ async function fetchProduct() {
         }
     }
 
+
 function addItemToCartButton(){ 
-  document.getElementById("add-to-cart-btn").addEventListener("click", () => {
+  const button = document.getElementById("add-to-cart-btn");
+  if (!button) return;
+  button.addEventListener("click", () => {
     alert("Item added to cart!");
 
-  var productId = getProductIdFromUrl();
+    var productId = getProductIdFromUrl();
 
-  if (productId == "" || productId === null){
-    // Handle this
-    return;
-  }
+    if (productId == "" || productId === null){
+      return;
+    }
 
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  if (cart.some((id) => id === productId)){
-    button.textContent = "Clicked!"
-    console.log("item already exists in cart")
-    // Handle this
-    return;
-  }
+    if (cart.some((id) => id === productId)){
+      button.textContent = "Clicked!"
+      console.log("item already exists in cart")
+      return;
+    }
 
-  cart.push(productId);
+    cart.push(productId);
 
-  localStorage.setItem('cart', JSON.stringify(cart));
-})
+    localStorage.setItem("cart", JSON.stringify(cart));
+  })
 }
 
 
