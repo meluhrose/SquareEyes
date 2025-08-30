@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alt.textContent = product.image.alt;
 
                 const href = document.createElement("a");
+                href.classList.add("cta");
                 href.href = "../products/product.html?id="+product.id;
                 href.textContent = "View Product";
                 

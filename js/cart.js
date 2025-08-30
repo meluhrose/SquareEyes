@@ -11,6 +11,7 @@ function updateCartDisplay(){
         cartContainer.innerHTML = "<p>Your cart is currently empty.</p><p>Start adding products to your cart!</p>";
         return;
     }
+    
 
     cart.forEach(item => {
         var product = fetch(API_URL + item).then(Response => {
@@ -22,7 +23,7 @@ function updateCartDisplay(){
                         <img src="${product.image.url}" alt="${product.image.alt}">
                             <h2>${product.title}</h2>
                             <p>$${product.price}</p>
-                            <button id="remove-btn" class="cta" onclick="removeFromCart('${item.id}')">Remove</button>
+                            <button id="remove-btn" class="cta">Remove</button>
                     </div>
                 `;
             });
@@ -33,11 +34,14 @@ function updateCartDisplay(){
 }
 updateCartDisplay();
 
+
 cartContainer.addEventListener("click", function(event) {
     if (event.target.id === "remove-btn") {
         const cartItemElement = event.target.closest("div");
         if (cartItemElement) {
             cartItemElement.remove();
+            
+            
 
 const productTitle = cartItemElement.querySelector("h2").textContent;
 

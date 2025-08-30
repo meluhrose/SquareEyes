@@ -59,8 +59,7 @@ function addItemToCartButton(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (cart.some((id) => id === productId)){
-      button.textContent = "Clicked!"
-      console.log("item already exists in cart")
+      button.textContent = "Item already in cart"
       return;
     }
 
