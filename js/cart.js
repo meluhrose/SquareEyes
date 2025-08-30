@@ -22,7 +22,7 @@ function updateCartDisplay(){
                         <img src="${product.image.url}" alt="${product.image.alt}">
                             <h2>${product.title}</h2>
                             <p>$${product.price}</p>
-                            <button id="remove-btn" class="cta">Remove</button>
+                            <button id="remove-btn" class="cta" onclick="removeFromCart('${item.id}')">Remove</button>
                     </div>
                 `;
             });
@@ -30,10 +30,25 @@ function updateCartDisplay(){
         })
         
     });
-
 }
-
-//add event listener
-
 updateCartDisplay();
 
+cartContainer.addEventListener("click", function(event) {
+    if (event.target.id === "remove-btn") {
+        const cartItemElement = event.target.closest("div");
+        if (cartItemElement) {
+            cartItemElement.remove();
+
+const productTitle = cartItemElement.querySelector("h2").textContent;
+
+const productIndex = cart.findIndex(itemId => {
+return true;
+});
+if (productIndex !== -1) {
+    cart.splice(productIndex, 1);
+    cartItemElement.remove();
+    localStorage.setItem("cart", JSON.stringify(cart));
+}
+}
+}
+});
