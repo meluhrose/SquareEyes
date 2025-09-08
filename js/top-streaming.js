@@ -1,7 +1,7 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const dataContainer = document.getElementById("list-container");
+    const dataContainer = document.getElementById("top-streaming");
 
     async function fetchData() {
         try {
@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const result = await response.json();
             const data = result.data;
+            const firstThreeProducts = data.slice(0, 3);
             
 
-            data.forEach(product => {
+            firstThreeProducts.forEach(product => {
                 const itemDiv = document.createElement("div");
                 itemDiv.classList.add("item");
 
