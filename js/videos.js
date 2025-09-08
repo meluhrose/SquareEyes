@@ -85,6 +85,5 @@ async function filterVideosByGenre(genre) {
         dataContainer.appendChild(itemDiv);
     });
 
-    console.log("Filtered by genre:", genre);
-
 }
+
