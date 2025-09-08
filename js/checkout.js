@@ -21,7 +21,7 @@ function checkoutDisplay(){
                 cartContainer.innerHTML += `
                     <div>
                         <img src="${product.image.url}" alt="${product.image.alt}">
-                            <h2>${product.title}</h2>
+                            <p>${product.title}</p>
                             <p>$${product.price}</p>
                     </div>
                 `;
@@ -40,3 +40,17 @@ function checkoutDisplay(){
     });
 }
 checkoutDisplay();
+
+function validateForm() {
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+
+    let y = document.forms["myForm"]["ccnum"].value;
+    if (y == "") {
+      alert("Credit Card Number must be filled out");
+      return false;
+    }
+  }
+} 
