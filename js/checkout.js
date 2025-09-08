@@ -43,14 +43,27 @@ checkoutDisplay();
 
 function validateForm() {
   let name = document.forms["myForm"]["fname"].value;
-  if (name == "") {
+  if (name == "" || name == null) {
     alert("Name must be filled out");
     return false;
     } 
 
     let ccnum = document.forms["myForm"]["ccnum"].value;
-    if (ccnum == "") {
-      alert("Credit Card Number must be filled out");
+    if (ccnum.length < 16) {
+      alert("Credit Card Number must be at least 16 digits");
       return false;
     }
+
+    let expmonth = document.forms["myForm"]["expmonth"].value;
+    if (expmonth == "" || expmonth == null) {
+      alert("Exp. Month must be filled out");
+      return false;
+    }
+
+    let sc = document.forms["myForm"]["sc"].value;
+    if (sc.length < 3) {
+      alert("Security Code must be at least 3 digits");
+      return false;
+    }
+
 } 
