@@ -42,6 +42,7 @@ function checkoutDisplay(){
 checkoutDisplay();
 
 function validateForm() {
+  sessionStorage.setItem("cart", JSON.stringify(cart));
   let name = document.forms["myForm"]["fname"].value;
   if (name == "" || name == null) {
     alert("Name must be filled out");
@@ -66,5 +67,8 @@ function validateForm() {
       return false;
     }
 
-
+sessionStorage.removeItem("cart");
+localStorage.removeItem("cart");
+cart = [];
+return true;
 } 
