@@ -1,6 +1,10 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await fetchData();
+    filterVideosByGenre("All");
+});
+
 
     var genres = [
 
@@ -149,4 +153,3 @@ async function filterVideosByGenre(genre) {
     
 
     fetchData();
-}); 
