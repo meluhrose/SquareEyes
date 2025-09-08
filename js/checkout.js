@@ -54,11 +54,24 @@ function validateForm() {
       alert("Credit Card Number must be at least 16 digits");
       return false;
     }
+    else {
+      let ccPattern = /^\d{16}$/;
+      if (!ccPattern.test(ccnum.replace(/\s+/g, ''))) {
+          alert("Credit Card Number must be 16 digits");
+          return false;
+      }
+    }
 
-    let expmonth = document.forms["myForm"]["expmonth"].value;
-    if (expmonth == "" || expmonth == null) {
-      alert("Exp. Month must be filled out");
+    let expdate = document.forms["myForm"]["expdate"].value;
+    if (expdate == "" || expdate == null) {
+      alert("Expiration Date must be filled out");
       return false;
+    } else {
+      let expPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+      if (!expPattern.test(expdate)) {
+          alert("Expiration Date must be in MM/YY format");
+          return false;
+      }
     }
 
     let sc = document.forms["myForm"]["sc"].value;
