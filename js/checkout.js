@@ -42,15 +42,15 @@ function checkoutDisplay(){
 checkoutDisplay();
 
 function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
+  let name = document.forms["myForm"]["fname"].value;
+  if (name == "") {
     alert("Name must be filled out");
     return false;
+    } 
 
-    let y = document.forms["myForm"]["ccnum"].value;
-    if (y == "") {
+    let ccnum = document.forms["myForm"]["ccnum"].value;
+    if (ccnum == "") {
       alert("Credit Card Number must be filled out");
       return false;
     }
-  }
 } 
