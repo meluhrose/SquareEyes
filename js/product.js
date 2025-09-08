@@ -34,6 +34,7 @@ async function fetchProduct() {
                     <p>${product.description}</p>
                     <p>$${product.price}</p>
                     <button id="add-to-cart-btn" class="cta">Add to Cart</button>
+                    <button class="cta" onclick="history.back()">Go Back To Videos</button>
                 </div>
             `;
         } 

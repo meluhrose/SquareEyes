@@ -6,7 +6,8 @@ console.log(cart);
 
 const cartContainer = document.getElementById("cart-container");
 
-function updateCartDisplay(){
+
+function checkoutDisplay(){
 
     let totalPrice = 0;
     let productsFetched = 0;
@@ -38,13 +39,4 @@ function updateCartDisplay(){
         
     });
 }
-updateCartDisplay();
-
-function validateForm() {
-  let x = document.forms["myForm"]["fname"].value;
-  if (x == "") {
-    alert("Name must be filled out");
-    return false;
-  }
-}
-console.log("Form submitted");
+checkoutDisplay();
