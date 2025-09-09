@@ -23,49 +23,37 @@ function updateCartDisplay(){
                 const product = resp.data;
                 totalPrice += product.price;
                 cartContainer.innerHTML += `
-                    <div>
+                    <div class="cart-item" data-product-id="${item}">
                         <img src="${product.image.url}" alt="${product.image.alt}">
-                            <h2>${product.title}</h2>
-                            <p>$${product.price}</p>
-                            <button id="remove-btn" class="cta">Remove</button>
+                        <h2>${product.title}</h2>
+                        <p>$${product.price}</p>
+                        <button class="remove-btn cta">Remove</button>
                     </div>
                 `;
 
                 productsFetched ++;
                 if (productsFetched === cart.length) {
-
                     const totalDiv = document.createElement("div");
                     totalDiv.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
                     cartContainer.appendChild(totalDiv);
                 }
             });
-
         })
-        
     });
 }
 updateCartDisplay();
 
 
 cartContainer.addEventListener("click", function(event) {
-    if (event.target.id === "remove-btn") {
-        const cartItemElement = event.target.closest("div");
-        if (cartItemElement) {
-            cartItemElement.remove();
-            
-            
-
-const productTitle = cartItemElement.querySelector("h2").textContent;
-
-const productIndex = cart.findIndex(itemId => {
-return true;
-});
-if (productIndex !== -1) {
-    cart.splice(productIndex, 1);
-    cartItemElement.remove();
-    localStorage.setItem("cart", JSON.stringify(cart));
-    updateCartDisplay();
-}
-}
-}
+    if (event.target.classList.contains("remove-btn")) {
+        const cartItemElement = event.target.closest(".cart-item");
+        if (!cartItemElement) return;
+        const productId = cartItemElement.getAttribute("data-product-id");
+        const productIndex = cart.indexOf(productId);
+        if (productIndex !== -1) {
+            cart.splice(productIndex, 1);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            updateCartDisplay();
+        }
+    }
 });
