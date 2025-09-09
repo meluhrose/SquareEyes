@@ -42,7 +42,9 @@ function checkoutDisplay(){
 checkoutDisplay();
 
 function validateForm() {
-  sessionStorage.setItem("cart", JSON.stringify(cart));
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+
   let name = document.forms["myForm"]["fname"].value;
   if (name == "" || name == null) {
     alert("Name must be filled out");
@@ -66,7 +68,8 @@ function validateForm() {
     if (expdate == "" || expdate == null) {
       alert("Expiration Date must be filled out");
       return false;
-    } else {
+    } 
+    else {
       let expPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
       if (!expPattern.test(expdate)) {
           alert("Expiration Date must be in MM/YY format");
@@ -80,7 +83,6 @@ function validateForm() {
       return false;
     }
 
-sessionStorage.removeItem("cart");
 localStorage.removeItem("cart");
 cart = [];
 return true;
