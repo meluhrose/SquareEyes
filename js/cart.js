@@ -23,7 +23,7 @@ function updateCartDisplay(){
                 const product = resp.data;
                 totalPrice += product.price;
                 cartContainer.innerHTML += `
-                    <div class="cart-item" data-product-id="${item}">
+                    <div class="cart-item cart-text" data-product-id="${item}">
                         <img src="${product.image.url}" alt="${product.image.alt}">
                         <h2>${product.title}</h2>
                         <p>$${product.price}</p>
