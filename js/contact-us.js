@@ -16,7 +16,7 @@ function validateForm() {
       return false;
     }
 
-    document.getElementById("submit-button").addEventListener("click", function(event) {
+    document.getElementById("submit-button").addEventListener("onclick", function(event) {
         event.preventDefault();
         alert("Thank you for reaching out to us! We will get back to you shortly.");
         document.getElementById("contact-form").reset();
