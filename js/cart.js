@@ -6,42 +6,46 @@ console.log(cart);
 
 const cartContainer = document.getElementById("cart-container");
 
-function updateCartDisplay(){
+async function updateCartDisplay(){
     cartContainer.innerHTML = "";
+
     if (cart.length === 0) {
         cartContainer.innerHTML = "<p>Your cart is currently empty.</p><p>Start adding products to your cart!</p>";
         return;
     }
 
     let totalPrice = 0;
-    let productsFetched = 0;
+    let cartHTML = "";
 
-    cart.forEach(item => {
-        fetch(API_URL + item)
-        .then(response => { response.json()
-            .then(resp => {
-                const product = resp.data;
-                totalPrice += product.price;
-                cartContainer.innerHTML += `
-                    <div class="cart-item cart-text" data-product-id="${item}">
+    for (const itemId of cart) {
+        try {
+            const response = await fetch(API_URL + itemId);
+            const result = await response.json();
+            const product = result.data;
+
+            totalPrice += product.price;
+
+            cartHTML += `
+                    <div class="cart-item cart-text" data-product-id="${itemId}">
                         <img src="${product.image.url}" alt="${product.image.alt}">
                         <h2>${product.title}</h2>
                         <p>$${product.price}</p>
                         <button class="remove-btn cta">Remove</button>
                     </div>
                 `;
+        } catch (error) {
+            console.error(`Error fetching ${itemId}`, error);
+        }
+    }
 
-                productsFetched ++;
-                if (productsFetched === cart.length) {
+    cartContainer.innerHTML = cartHTML;
+
                     const totalDiv = document.createElement("div");
-                    totalDiv.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
+                    totalDiv.innerHTML = 
+                    `<p>Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
                     cartContainer.appendChild(totalDiv);
                 }
-            });
-        })
-    });
-}
-updateCartDisplay();
+                updateCartDisplay();
 
 
 cartContainer.addEventListener("click", function(event) {

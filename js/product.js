@@ -51,7 +51,6 @@ function addItemToCartButton(){
   if (!button) return;
   button.addEventListener("click", () => {
     button.textContent = "Added!";
-    button.disabled = true;
 
     var productId = getProductIdFromUrl();
 
