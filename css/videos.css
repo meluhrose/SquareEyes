@@ -23,4 +23,25 @@
     height: 294px;
     padding: 15px;
   }
+
+  .genre-cta {
+    font-family: var(--text-heading), sans-serif;
+    text-decoration: none;
+    background-color: #0C1B20;
+    border: 1px solid #FFFBFB;
+    color:#FFFBFB;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 5px 40px;
+  }
+  .genre-cta:hover {
+    background-color: #ddae48;
+    transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+    color:#0C1B20;
+    border: none;
+    text-decoration: underline;
+    transition-duration: 0.3s;
+
+  }
   

@@ -16,7 +16,7 @@ for (let i = 0; i < genres.length; i++) {
     genreDiv.classList.add("genre");
 
     var genreName = document.createElement("button");
-    genreName.classList.add("cta");
+    genreName.classList.add("genre-cta");
     genreName.textContent = genres[i].name;
     genreName.onclick = async function() {
         await filterVideosByGenre(this.textContent);
