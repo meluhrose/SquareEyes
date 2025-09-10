@@ -1,6 +1,8 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
+
 document.addEventListener("DOMContentLoaded", () => {
+    
     const dataContainer = document.getElementById("top-streaming");
 
     async function fetchData() {
@@ -59,4 +61,5 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     fetchData();
+    
 }); 

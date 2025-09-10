@@ -52,13 +52,12 @@ input[type=text] {
 .cart-item {
     display: flex;
     justify-content: center;
-    margin: 15px;
     padding: 25px;
     height: auto;
 }
 
 .cart-item img{
-    max-width: 150px;
+    max-width: 110px;
     height: auto;
     padding-right: 30px;
 
@@ -70,15 +69,7 @@ input[type=text] {
     text-overflow:ellipsis
 }
 
-.movie-title {
-    font-size: 24px;
-    text-wrap: wrap;
-}
 
-.movie-title,
-.totalprice {
-    font-weight: bold;
-}
 
 .payment {
 

@@ -76,13 +76,13 @@
 
 .top-streaming,
 .movie-title {
+  background-color: rgba(217, 217, 217, 0.31);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  gap: 75px;
   justify-content: center;
   justify-items: center;
-  gap: 2rem;
+  padding: 20px;
 }
 
 .top-streaming img {

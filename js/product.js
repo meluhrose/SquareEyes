@@ -30,9 +30,10 @@ async function fetchProduct() {
                     <a href="${product.image.url}" target="_blank">
                         <img src="${product.image.url}" alt="${product.image.alt}">
                     </a>
-                    <h2>${product.title}</h2>
+                    <h1>${product.title} ${product.released}</h1>
+                    <h2>Rating: ${product.rating}</h2>
                     <p>${product.description}</p>
-                    <p>$${product.price}</p>
+                    <h2>$${product.price}</h2>
                     <button id="add-to-cart-btn" class="cta">Add to Cart</button>
                     <button class="cta" onclick="history.back()">Go Back To Videos</button>
                 </div>

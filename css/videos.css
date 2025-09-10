@@ -1,28 +1,9 @@
 .genre-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-around;
     justify-items: center;
-    align-items: center;
     margin-top: 20px;
-  }
-  
-  .genre-container h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .genre-container a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-  }
-
-.genres {
-    position: relative;
-    left: -20px;
-    top: -70px;
-    margin: 12px;
   }
   
   .video-list {
@@ -30,7 +11,7 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    gap: 25px;
+    gap: 15px;
     text-align: center;
     white-space: nowrap;
     margin: 2%;
