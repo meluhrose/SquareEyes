@@ -50,7 +50,8 @@ function addItemToCartButton(){
   const button = document.getElementById("add-to-cart-btn");
   if (!button) return;
   button.addEventListener("click", () => {
-    alert("Item added to cart!");
+    button.textContent = "Added!";
+    button.disabled = true;
 
     var productId = getProductIdFromUrl();
 
@@ -61,7 +62,8 @@ function addItemToCartButton(){
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
     if (cart.some((id) => id === productId)){
-      button.textContent = "Item already in cart"
+      button.textContent = "Already in cart";
+
       return;
     }
 
