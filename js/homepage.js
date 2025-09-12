@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 `;
             }
-            const topProducts = data.slice(0, 9);
+            const topProducts = data.slice(0, 6);
 
             topProducts.forEach(product => {
                 const itemDiv = document.createElement("div");
