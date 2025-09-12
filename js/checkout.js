@@ -7,39 +7,36 @@ console.log(cart);
 const cartContainer = document.getElementById("cart-container");
 
 
-function checkoutDisplay(){
 
-    let totalPrice = 0;
-    let productsFetched = 0;
+async function cartSummaryDisplay() {
+  let totalPrice = 0;
+  let productsFetched = 0;
 
-    cart.forEach(item => {
-        fetch(API_URL + item)
-        .then(response => { response.json()
-            .then(resp => {
-                const product = resp.data;
-                totalPrice += product.price;
-                cartContainer.innerHTML += `
-                    <div>
-                        <img src="${product.image.url}" alt="${product.image.alt}">
-                            <p>${product.title}</p>
-                            <p>$${product.price}</p>
-                    </div>
-                `;
-
-                productsFetched ++;
-                if (productsFetched === cart.length) {
-
-                    const totalDiv = document.createElement("div");
-                    totalDiv.innerHTML = `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p>`;
-                    cartContainer.appendChild(totalDiv);
-                }
-            });
-
-        })
-        
-    });
+  for (const item of cart) {
+    try {
+      const response = await fetch(API_URL + item);
+      const resp = await response.json();
+      const product = resp.data;
+      totalPrice += product.price;
+      cartContainer.innerHTML += `
+        <div>
+          <img src="${product.image.url}" alt="${product.image.alt}">
+            <p>${product.title}</p>
+            <p>$${product.price}</p>
+        </div>
+      `;
+      productsFetched++;
+      if (productsFetched === cart.length) {
+        const totalDiv = document.createElement("div");
+        totalDiv.innerHTML = `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p>`;
+        cartContainer.appendChild(totalDiv);
+      }
+    } catch (error) {
+      console.error('Error fetching product:', error);
+    }
+  }
 }
-checkoutDisplay();
+cartSummaryDisplay();
 
 function validateForm() {
 
@@ -83,7 +80,8 @@ function validateForm() {
       alert("Security Code must be exactly 3 digits");
       return false;
     }
-localStorage.removeItem("cart");
-cart = [];
-return true;
-} 
+    
+    localStorage.removeItem("cart");
+    cart = [];
+    return true;
+  } 
