@@ -30,7 +30,7 @@ function checkoutDisplay(){
                 if (productsFetched === cart.length) {
 
                     const totalDiv = document.createElement("div");
-                    totalDiv.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p>`;
+                    totalDiv.innerHTML = `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p>`;
                     cartContainer.appendChild(totalDiv);
                 }
             });
@@ -78,8 +78,9 @@ function validateForm() {
     }
 
     let sc = document.forms["myForm"]["sc"].value;
-    if (sc.length < 3) {
-      alert("Security Code must be at least 3 digits");
+    let scPattern = /^\d{3}$/;
+    if (!scPattern.test(sc)) {
+      alert("Security Code must be exactly 3 digits");
       return false;
     }
 localStorage.removeItem("cart");

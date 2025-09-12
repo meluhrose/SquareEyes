@@ -9,8 +9,9 @@ main {
 h2 {
     font-family: var(--text-heading), sans-serif;
     color: #000;
-    font-size: 20px;
+    font-size: 2rem;
     font-style: normal;
+    
 
 }
 
@@ -52,7 +53,6 @@ input[type=text] {
     display: flex;
     justify-content: center;
     justify-items: center;
-    align-items: center;
     padding: 25px;
     height: auto;
 }
@@ -67,22 +67,27 @@ input[type=text] {
 .cart-text {
     display: flex;
     flex-direction: column;
-    text-overflow:ellipsis
+    text-overflow:ellipsis;
 }
 
-
+.subtotal {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
 
 .payment {
-
     padding: 20px;
     margin: 60px;
+    border-radius: 5px;
+    box-shadow: #0C1B20 1px 1px 2px;
+    width: 50%;
 }
 
 .row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    margin: 0 -16px;
+    margin: 0 -16px;;
 }
 
 .column50 {
@@ -90,3 +95,5 @@ input[type=text] {
     padding: 0 16px;
 
 }
+
+

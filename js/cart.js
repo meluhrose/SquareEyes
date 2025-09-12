@@ -10,7 +10,7 @@ async function updateCartDisplay(){
     cartContainer.innerHTML = "";
 
     if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is currently empty.</p><p>Start adding products to your cart!</p>";
+        cartContainer.innerHTML = "<p>Your cart is currently empty.</p><p>Start adding products to your cart!</p><button class=\"cta\" onclick=\"window.location.href='videos.html'\">Browse Videos</button>";
         return;
     }
 
@@ -28,7 +28,7 @@ async function updateCartDisplay(){
             cartHTML += `
                     <div class="cart-item cart-text" data-product-id="${itemId}">
                         <img src="${product.image.url}" alt="${product.image.alt}">
-                        <h2>${product.title}</h2>
+                        <p>${product.title}</p>
                         <p>$${product.price}</p>
                         <button class="remove-btn cta">Remove</button>
                     </div>
@@ -42,7 +42,7 @@ async function updateCartDisplay(){
 
                     const totalDiv = document.createElement("div");
                     totalDiv.innerHTML = 
-                    `<p>Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
+                    `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
                     cartContainer.appendChild(totalDiv);
                 }
                 updateCartDisplay();
