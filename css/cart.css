@@ -3,7 +3,6 @@ main {
     background-size: cover;
 	background-repeat:space;
     background-position: center;
-    width: 100%;
     height: auto;
 }
 
@@ -52,6 +51,8 @@ input[type=text] {
 .cart-item {
     display: flex;
     justify-content: center;
+    justify-items: center;
+    align-items: center;
     padding: 25px;
     height: auto;
 }
@@ -59,7 +60,7 @@ input[type=text] {
 .cart-item img{
     max-width: 110px;
     height: auto;
-    padding-right: 30px;
+    
 
 }
 
