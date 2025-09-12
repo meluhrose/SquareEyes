@@ -63,7 +63,7 @@
   font-size: 3em;
   font-style: normal;
   text-align: center;
-  padding: 65px;
+  padding-top: 10%;
 
 }
 
@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: center;
   justify-items: center;
-  padding: 20px;
+  padding: 30px;
 }
 
 .top-streaming img {
