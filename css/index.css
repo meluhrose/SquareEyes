@@ -85,7 +85,15 @@
 .top-streaming img {
   width: 314px;
   height: 415px;
-  padding: 20px;
+  border: 2px underline#0C1B20;
+  box-shadow: #0C1B20 2px 2px 4px;
+}
+
+.top-streaming img:hover {
+  transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+  transition-duration: 0.2s;
+  box-shadow: #0C1B20 4px 4px 8px;
+  border: 2px underline #0C1B20;
 }
 
 .movie {

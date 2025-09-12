@@ -82,7 +82,6 @@ function validateForm() {
       alert("Security Code must be at least 3 digits");
       return false;
     }
-
 localStorage.removeItem("cart");
 cart = [];
 return true;

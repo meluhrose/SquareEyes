@@ -1,4 +1,4 @@
-var genres = [
+const genres = [
 
     {name: "All"},
     {name: "Action"},
@@ -8,14 +8,14 @@ var genres = [
     {name: "Drama"},
 ];
 
-var genreContainer = document.getElementById("genre-container");
+const genreContainer = document.getElementById("genre-container");
 
 
 for (let i = 0; i < genres.length; i++) {
-    var genreDiv = document.createElement("div");
+    const genreDiv = document.createElement("div");
     genreDiv.classList.add("genre");
 
-    var genreName = document.createElement("button");
+    const genreName = document.createElement("button");
     genreName.classList.add("genre-cta");
     genreName.textContent = genres[i].name;
     genreName.onclick = async function() {
@@ -86,5 +86,5 @@ async function filterVideosByGenre(genre) {
         dataContainer.appendChild(itemDiv);
     });
 
-}
 
+}

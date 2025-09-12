@@ -14,14 +14,22 @@
     gap: 15px;
     text-align: center;
     white-space: nowrap;
-    margin: 2%;
-    padding: 2%;
+    margin: 3%;
+    padding: 5%;
   }
   
   .video-list img {
     width: 200px;
     height: 294px;
-    padding: 15px;
+    border: 2px underline#0C1B20;
+    box-shadow: #0C1B20 2px 2px 4px;
+  }
+
+  .video-list img:hover {
+    transform: matrix(1.05, 0, 0, 1.05, 0, 0);
+    transition-duration: 0.2s;
+    box-shadow: #0C1B20 4px 4px 8px;
+    border: 2px underline #0C1B20;
   }
 
   .genre-cta {
@@ -41,7 +49,7 @@
     color:#0C1B20;
     border: none;
     text-decoration: underline;
-    transition-duration: 0.3s;
+    transition-duration: 0.2s;
 
   }
   

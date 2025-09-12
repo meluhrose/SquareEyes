@@ -39,6 +39,7 @@ async function fetchProduct() {
                 </div>
             `;
         } 
+        
         catch (error) {
             productInfo.innerHTML = "<p>Failed to load product.</p>";
             console.error("Fetch error:", error);
