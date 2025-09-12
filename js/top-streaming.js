@@ -10,15 +10,29 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(API_URL);
 
             if (!response.ok) {
-                throw new Error("HTTP error! status: {response.status}");
+                throw new Error("HTTP error! status: ${response.status}");
             }
 
             const result = await response.json();
             const data = result.data;
-            const firstThreeProducts = data.slice(0, 3);
-            
+            const featureSection = document.querySelector(".feature-information");
+            if (featureSection && data.length > 0) {
+                const product = data[8];
+                featureSection.innerHTML = `
+                    <img src="${product.image.url}" alt="${product.image.alt}">
+                    <div class="feature-text">
+                        <h2 class="feature-movie">${product.title}</h2>
+                        <p class="yearreleased">${product.released}</p>
+                        <div class="synopsis">
+                            <p>${product.description}</p>
+                        </div>
+                        <a class="cta" href="products/product.html?id=${product.id}">View Product</a>
+                    </div>
+                `;
+            }
+            const showThreeProducts = data.slice(3, 6);
 
-            firstThreeProducts.forEach(product => {
+            showThreeProducts.forEach(product => {
                 const itemDiv = document.createElement("div");
                 itemDiv.classList.add("item");
 

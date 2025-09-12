@@ -45,8 +45,8 @@
   font-size: 24px;
 }
 
-.duration {
-  font-size: 12px;
+.yearreleased {
+  font-size: 18px;
 }
 
 .synopsis {
@@ -55,9 +55,6 @@
   text-overflow: ellipsis;
 }
 
-.price {
-  font-size: 18px;
-}
 
 .titles-top {
   color: #fff;
