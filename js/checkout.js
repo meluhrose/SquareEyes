@@ -2,7 +2,6 @@ const API_URL = "https://v2.api.noroff.dev/square-eyes/"
 
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
-console.log(cart);
 
 const cartContainer = document.getElementById("cart-container");
 

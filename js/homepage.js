@@ -9,10 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(API_URL);
 
-            if (!response.ok) {
-                throw new Error("HTTP error! status: ${response.status}");
-            }
-
             const result = await response.json();
             const data = result.data;
             const featureSection = document.querySelector(".feature-information");
