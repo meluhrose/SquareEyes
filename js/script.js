@@ -1,5 +1,5 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes/";
-
+// Fetch and display all products on products listing page
 document.addEventListener("DOMContentLoaded", () => {
     const dataContainer = document.getElementById("list-container");
 
@@ -8,19 +8,19 @@ document.addEventListener("DOMContentLoaded", () => {
             const response = await fetch(API_URL);
 
             if (!response.ok) {
-                throw new Error("HTTP error! status: {response.status}");
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
 
             const result = await response.json();
             const data = result.data;
             
-
+            // Display all products
             data.forEach(product => {
                 const itemDiv = document.createElement("div");
                 itemDiv.classList.add("item");
 
                 const imgLink = document.createElement("a");
-                imgLink.href = "../products/product.html?id="+product.id;
+                imgLink.href = "../products/product.html?id=" + product.id;
                 const img = document.createElement("img");
                 img.src = product.image.url;
                 img.alt = product.image.alt;
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const href = document.createElement("a");
                 href.classList.add("cta");
-                href.href = "../products/product.html?id="+product.id;
+                href.href = "../products/product.html?id=" + product.id;
                 href.textContent = "View Product";
                 
 
@@ -55,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
             dataContainer.textContent = "Failed to load movies. Please try again later.";
         }
     }
-    
 
     fetchData();
 }); 

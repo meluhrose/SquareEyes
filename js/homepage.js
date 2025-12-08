@@ -1,8 +1,6 @@
 const API_URL = "https://v2.api.noroff.dev/square-eyes/";
-
-
+// Fetch and display top streaming products on homepage
 document.addEventListener("DOMContentLoaded", () => {
-    
     const dataContainer = document.getElementById("top-streaming");
 
     async function fetchData() {
@@ -26,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                 `;
             }
+            // Display top 6 products
             const topProducts = data.slice(0, 6);
 
             topProducts.forEach(product => {
@@ -33,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 itemDiv.classList.add("item");
 
                 const imgLink = document.createElement("a");
-                imgLink.href = "../products/product.html?id="+product.id;
+                imgLink.href = "../products/product.html?id=" + product.id;
                 const img = document.createElement("img");
                 img.src = product.image.url;
                 img.alt = product.image.alt;
@@ -50,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const href = document.createElement("a");
                 href.classList.add("cta");
-                href.href = "../products/product.html?id="+product.id;
+                href.href = "../products/product.html?id=" + product.id;
                 href.textContent = "View Product";
                 
 
@@ -68,8 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
             dataContainer.textContent = "Failed to load movies. Please try again later.";
         }
     }
-    
 
     fetchData();
-    
 }); 
