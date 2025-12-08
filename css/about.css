@@ -1,42 +1,42 @@
 .AboutUs {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .AboutConnect {
-    background-image: url('../assets/aboutus.jpg');
-    background-size: cover;
-    background-repeat: repeat-x;
-    text-align: center;
-    white-space: nowrap;
-    width: 664px;
-    height: 240px;
-    padding: 278px;
-    margin: 20px;
-  }
-  
-  .connectingheader {
-    position: relative;
-    top: 62%;
-  }
-  
-  .AboutInfo {
-    background-color: rgba(217, 217, 217, 0.31);
-    text-align: left;
-    max-width: 1029px;
-    max-height: fit-content;
-    padding: 95px;
-    margin: 2px;
-  }
-  
-  .about-header {
-    font-family: var(--text-heading), sans-serif;
-    font-size: 40px;
-  }
-  
-  .subheader {
-    font-family: "Inter" sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AboutConnect {
+  background-image: url('../assets/aboutus.jpg');
+  background-size: cover;
+  background-repeat: repeat-x;
+  text-align: center;
+  white-space: nowrap;
+  width: 664px;
+  height: 240px;
+  padding: 278px;
+  margin: 20px;
+}
+
+.connectingheader {
+  position: relative;
+  top: 62%;
+}
+
+.AboutInfo {
+  background-color: rgba(217, 217, 217, 0.31);
+  text-align: left;
+  max-width: 1029px;
+  max-height: fit-content;
+  padding: 95px;
+  margin: 2px;
+}
+
+.about-header {
+  font-family: var(--text-heading), sans-serif;
+  font-size: 40px;
+}
+
+.subheader {
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}

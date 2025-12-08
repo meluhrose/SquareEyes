@@ -1,215 +1,212 @@
 @media (max-width: 1000px) {
-
-    .AboutConnect {
-      width: 605px;
-      height: 234px;
-      padding: 21px;
-      margin: 8px;
-    }
-    
-     .connectingheader {
-        font-size: 27px;
-      }
-    
-     .AboutInfo {
-      max-width: 518px;
-      padding: 70px;
-      margin: 2px;
-      }
-
-      .twocontainer {
-        flex-direction: column;
-      }
-  }
-  
-  @media (min-width: 800px) {
-  
-    header {
-      justify-content: baseline;
-    }
-  
-    nav {
-      display: block;
-      position: static;
-    }
-  
-    header label {
-      display: none;
-    }
-  
-    nav li {
-      display: inline-block;
-    }
-
-    .paycta {
-      bottom: -30px;
-      left: -89px;
-  }
-}
-  
-  @media (max-width: 800px) {
-  
-    .synopsis {
-      font-size: 16px;
-    }
-  
-    .top-streaming {
-  
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  
-    .titles-top {
-      text-align: center;
-    }
-  
-    .video-list {
-      font-size: 16px;
-      padding: 20px;
-    }
-  
-    .video-list img {
-      width: 123px;
-      height: auto;
-    }
-  
-    .twocontainer {
-      flex-direction: column;
-    }
-  
-    .contact_image img {
-      width: 624px;
-      height: 50%;
-      padding: 0%;
-    }
-
-    .form {
-    width: 590px;;
-  }
-  
-    .productpage {
-      flex-direction: column;
-    }
-  
-    .productpage img {
-      justify-content: center;
-      justify-items: center;
-      width: 100%;
-      height: 80%;
-      padding:10px
-    }
-  }
-  
-  @media (max-width: 700px) {
-
-    .feature-information {
-      flex-direction: column;
-    }
-
-    .feature-information img {
-      width: 40%;
-    }
-  
-    .feature-text {
-      width: 229px;
-      height: 305px;
-    }
-
-    .synopsis {
-      font-size: 12px;
-    }
-  
-    .video-list {
-      font-size: 12px;
-      padding: 15px;
-    }
-
-    .movie-title {
-        font-size: 14px;
-    }
-
-    .cart-text {
-        font-size: 17px;
-    }
-
-    .paycta {
-        right: -22%;
-        top: 5%;
-    }
-
-    .success-cta {
-      justify-content: space-around;
-    }
-
-    .paycta {
-      right: 88px;
-    }
+  .AboutConnect {
+    width: 605px;
+    height: 234px;
+    padding: 21px;
+    margin: 8px;
   }
 
-  @media (max-width: 600px) { 
-
-    .success-cta {
-      white-space: nowrap;
-      flex-direction: column;
-    }
-
-    .success-header {
-      font-size: 26px;
-    }
-
-    .cart-item {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .cart-item img {
-      width: 100px;
-      padding-right: 0px;
-    }
-
-    .paycta {
-      right: 50%;
-      white-space: nowrap;
-    }
-
-    .row {
-      margin: -16px;
-    }
-
-    .AboutConnect {
-      width: 442px;
-    }
+  .connectingheader {
+    font-size: 27px;
   }
 
-  @media (max-width: 500px) {
-    h1 {
-      position: relative;
-      font-size: 31px;}
-    
-    .paycta {
-      left: 25%;
-    }
-    .form {
-      width: 372px;
-    }
-    .contact_image img {
-      width: 409px;
-      height: 275px;
+  .AboutInfo {
+    max-width: 518px;
+    padding: 70px;
+    margin: 2px;
+  }
+
+  .twocontainer {
+    flex-direction: column;
   }
 }
 
-  @media (max-width: 400px) {
-    .paycta {
-      left: 25%;
-    }
-
-    .AboutConnect {
-      width: 216px;
-    }
-
-    .connectingheader {
-      font-size: 16px;
-    }
+@media (min-width: 800px) {
+  header {
+    justify-content: baseline;
   }
+
+  nav {
+    display: block;
+    position: static;
+  }
+
+  header label {
+    display: none;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  .paycta {
+    bottom: -30px;
+    left: -89px;
+  }
+}
+
+@media (max-width: 800px) {
+  .synopsis {
+    font-size: 16px;
+  }
+
+  .top-streaming {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .titles-top {
+    text-align: center;
+  }
+
+  .video-list {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .video-list img {
+    width: 123px;
+    height: auto;
+  }
+
+  .twocontainer {
+    flex-direction: column;
+  }
+
+  .contact_image img {
+    width: 624px;
+    height: 50%;
+    padding: 0%;
+  }
+
+  .form {
+    width: 590px;
+  }
+
+  .productpage {
+    flex-direction: column;
+  }
+
+  .productpage img {
+    justify-content: center;
+    justify-items: center;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .feature-information {
+    flex-direction: column;
+  }
+
+  .feature-information img {
+    width: 40%;
+  }
+
+  .feature-text {
+    width: 229px;
+    height: 305px;
+  }
+
+  .synopsis {
+    font-size: 12px;
+  }
+
+  .video-list {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .movie-title {
+    font-size: 14px;
+  }
+
+  .cart-text {
+    font-size: 17px;
+  }
+
+  .paycta {
+    right: -22%;
+    top: 5%;
+  }
+
+  .success-cta {
+    justify-content: space-around;
+  }
+
+  .paycta {
+    right: 88px;
+  }
+}
+
+@media (max-width: 600px) {
+  .success-cta {
+    white-space: nowrap;
+    flex-direction: column;
+  }
+
+  .success-header {
+    font-size: 26px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cart-item img {
+    width: 100px;
+    padding-right: 0px;
+  }
+
+  .paycta {
+    right: 50%;
+    white-space: nowrap;
+  }
+
+  .row {
+    margin: -16px;
+  }
+
+  .AboutConnect {
+    width: 442px;
+  }
+}
+
+@media (max-width: 500px) {
+  h1 {
+    position: relative;
+    font-size: 31px;
+  }
+
+  .paycta {
+    left: 25%;
+  }
+
+  .form {
+    width: 372px;
+  }
+
+  .contact_image img {
+    width: 409px;
+    height: 275px;
+  }
+}
+
+@media (max-width: 400px) {
+  .paycta {
+    left: 25%;
+  }
+
+  .AboutConnect {
+    width: 216px;
+  }
+
+  .connectingheader {
+    font-size: 16px;
+  }
+}
   

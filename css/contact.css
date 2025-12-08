@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  }
+}
 
 .contact_image img {
   background-size: contain;
@@ -39,8 +39,8 @@ input, textarea {
 
 .verification,
 .contact-info {
- margin: 10px;
- padding: 5px;
+  margin: 10px;
+  padding: 5px;
 }
 
 .contact-info {
