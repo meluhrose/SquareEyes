@@ -1,46 +1,44 @@
 main {
-    background-image: url('../assets/checkout.jpg');
-    background-size: cover;
-	background-repeat: no-repeat;
-    background-position: center;
-    height: 90vh;
+  background-image: url('../assets/checkout.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 90vh;
 }
 
 h1 {
-    color: #000;
+  color: #000;
 }
 
 
 h2 {
-    color: #000;
-    font-family: "Inter", serif;
-    font-size: 20px;
-    font-weight: normal;
-    padding: 2px 3px;
+  color: #000;
+  font-family: "Inter", serif;
+  font-size: 20px;
+  font-weight: normal;
+  padding: 2px 3px;
 }
-
 
 .successbox {
-    background-color: rgba(243, 243, 243, 0.5);
-    width: 100%;
-    height: 100%;
-    padding: 5px;
+  background-color: rgba(243, 243, 243, 0.5);
+  width: 100%;
+  height: 100%;
+  padding: 5px;
 }
 
-    .success-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-        padding-top: 20%;
-    }
-
+.success-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20%;
+}
 
 .success-cta {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
