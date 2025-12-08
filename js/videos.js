@@ -1,3 +1,5 @@
+
+// Fetch and display videos by genre
 const genres = [
 
     {name: "All"},
@@ -25,7 +27,7 @@ for (let i = 0; i < genres.length; i++) {
     genreDiv.appendChild(genreName);
     genreContainer.appendChild(genreDiv);
 }
-
+// Function to filter videos by genre
 async function filterVideosByGenre(genre) {
     const response = await fetch(API_URL);
     const result = await response.json();
@@ -57,11 +59,11 @@ async function filterVideosByGenre(genre) {
         itemDiv.classList.add("item");
 
         const imgLink = document.createElement("a");
-            imgLink.href = "../products/product.html?id="+product.id;
+        imgLink.href = "../products/product.html?id=" + product.id;
         const img = document.createElement("img");
-            img.src = product.image.url;
-            img.alt = product.image.alt;
-            imgLink.appendChild(img);
+        img.src = product.image.url;
+        img.alt = product.image.alt;
+        imgLink.appendChild(img);
 
         const title = document.createElement("h3");
         title.textContent = product.title;
@@ -74,7 +76,7 @@ async function filterVideosByGenre(genre) {
 
         const href = document.createElement("a");
         href.classList.add("cta");
-        href.href = "../products/product.html?id="+product.id;
+        href.href = "../products/product.html?id=" + product.id;
         href.textContent = "View Product";
 
         itemDiv.appendChild(imgLink);
@@ -85,6 +87,4 @@ async function filterVideosByGenre(genre) {
 
         dataContainer.appendChild(itemDiv);
     });
-
-
 }

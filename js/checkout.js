@@ -1,12 +1,9 @@
-const API_URL = "https://v2.api.noroff.dev/square-eyes/"
-
+const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const cartContainer = document.getElementById("cart-container");
-
-
-
+// Function to display cart summary on checkout page
 async function cartSummaryDisplay() {
   let totalPrice = 0;
   let productsFetched = 0;
@@ -36,51 +33,48 @@ async function cartSummaryDisplay() {
   }
 }
 cartSummaryDisplay();
-
+// Form validation for checkout page
 function validateForm() {
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  let name = document.forms["myForm"]["fname"].value;
-  if (name == "" || name == null) {
-    alert("Name must be filled out");
-    return false;
-    } 
-
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // Name validation
+    let name = document.forms["myForm"]["fname"].value;
+    if (name === "" || name === null) {
+        alert("Name must be filled out");
+        return false;
+    }
+    // Credit Card Number validation
     let ccnum = document.forms["myForm"]["ccnum"].value;
     if (ccnum.length < 16) {
-      alert("Credit Card Number must be at least 16 digits");
-      return false;
-    }
-    else {
-      let ccPattern = /^\d{16}$/;
-      if (!ccPattern.test(ccnum.replace(/\s+/g, ''))) {
-          alert("Credit Card Number must be 16 digits");
-          return false;
-      }
-    }
-
+        alert("Credit Card Number must be at least 16 digits");
+        return false;
+    } else {
+        let ccPattern = /^\d{16}$/;
+        if (!ccPattern.test(ccnum.replace(/\s+/g, ''))) {
+            alert("Credit Card Number must be 16 digits");
+            return false;
+        }
+    }    
+    // Expiration Date validation
     let expdate = document.forms["myForm"]["expdate"].value;
-    if (expdate == "" || expdate == null) {
-      alert("Expiration Date must be filled out");
-      return false;
-    } 
-    else {
-      let expPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
-      if (!expPattern.test(expdate)) {
-          alert("Expiration Date must be in MM/YY format");
-          return false;
-      }
+    if (expdate === "" || expdate === null) {
+        alert("Expiration Date must be filled out");
+        return false;
+    } else {
+        let expPattern = /^(0[1-9]|1[0-2])\/\d{2}$/;
+        if (!expPattern.test(expdate)) {
+            alert("Expiration Date must be in MM/YY format");
+            return false;
+        }
     }
-
+    // Security Code validation
     let sc = document.forms["myForm"]["sc"].value;
     let scPattern = /^\d{3}$/;
     if (!scPattern.test(sc)) {
-      alert("Security Code must be exactly 3 digits");
-      return false;
+        alert("Security Code must be exactly 3 digits");
+        return false;
     }
-    
+
     localStorage.removeItem("cart");
     cart = [];
     return true;
-  } 
+} 

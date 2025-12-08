@@ -1,11 +1,11 @@
-const API_URL = "https://v2.api.noroff.dev/square-eyes/"
-
+const API_URL = "https://v2.api.noroff.dev/square-eyes/";
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 const cartContainer = document.getElementById("cart-container");
 
-async function updateCartDisplay(){
+// Function to update cart display
+async function updateCartDisplay() {
     cartContainer.innerHTML = "";
 
     if (cart.length === 0) {
@@ -25,29 +25,28 @@ async function updateCartDisplay(){
             totalPrice += product.price;
 
             cartHTML += `
-                    <div class="cart-item cart-text" data-product-id="${itemId}">
-                        <img src="${product.image.url}" alt="${product.image.alt}">
-                        <p>${product.title}</p>
-                        <p>$${product.price}</p>
-                        <button class="remove-btn cta">Remove</button>
-                    </div>
-                `;
+                <div class="cart-item cart-text" data-product-id="${itemId}">
+                    <img src="${product.image.url}" alt="${product.image.alt}">
+                    <p>${product.title}</p>
+                    <p>$${product.price}</p>
+                    <button class="remove-btn cta">Remove</button>
+                </div>
+            `;
         } catch (error) {
             console.error(`Error fetching ${itemId}`, error);
         }
     }
 
     cartContainer.innerHTML = cartHTML;
+    // Display total price and checkout button
+    const totalDiv = document.createElement("div");
+    totalDiv.innerHTML = `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
+    cartContainer.appendChild(totalDiv);
+}
 
-                    const totalDiv = document.createElement("div");
-                    totalDiv.innerHTML = 
-                    `<p class="subtotal">Total Price: $${totalPrice.toFixed(2)}</p><a href="checkout.html" class="cta">Proceed to Checkout</a>`;
-                    cartContainer.appendChild(totalDiv);
-                }
-                updateCartDisplay();
-
-
-cartContainer.addEventListener("click", function(event) {
+updateCartDisplay();
+// Remove item from cart event listener
+cartContainer.addEventListener("click", function (event) {
     if (event.target.classList.contains("remove-btn")) {
         const cartItemElement = event.target.closest(".cart-item");
         if (!cartItemElement) return;
