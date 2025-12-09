@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <div class="synopsis">
                             <p>${product.description}</p>
                         </div>
-                        <a class="cta" href="products/product.html?id=${product.id}">View Product</a>
+                        <a class="cta" href="products/productpage.html?id=${product.id}">View Product</a>
                     </div>
                 `;
             }
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 itemDiv.classList.add("item");
 
                 const imgLink = document.createElement("a");
-                imgLink.href = "../products/product.html?id=" + product.id;
+                imgLink.href = "../products/productpage.html?id=" + product.id;
                 const img = document.createElement("img");
                 img.src = product.image.url;
                 img.alt = product.image.alt;
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const href = document.createElement("a");
                 href.classList.add("cta");
-                href.href = "../products/product.html?id=" + product.id;
+                href.href = "../products/productpage.html?id=" + product.id;
                 href.textContent = "View Product";
                 
 
