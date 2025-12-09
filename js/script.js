@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 itemDiv.classList.add("item");
 
                 const imgLink = document.createElement("a");
-                imgLink.href = "../products/product.html?id=" + product.id;
+                imgLink.href = "../products/productpage.html?id=" + product.id;
                 const img = document.createElement("img");
                 img.src = product.image.url;
                 img.alt = product.image.alt;
