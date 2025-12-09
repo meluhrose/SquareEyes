@@ -59,7 +59,7 @@ async function filterVideosByGenre(genre) {
         itemDiv.classList.add("item");
 
         const imgLink = document.createElement("a");
-        imgLink.href = "../products/productpage.html?id=" + product.id;
+        imgLink.href = "products/productpage.html?id=" + product.id;
         const img = document.createElement("img");
         img.src = product.image.url;
         img.alt = product.image.alt;
@@ -76,7 +76,7 @@ async function filterVideosByGenre(genre) {
 
         const href = document.createElement("a");
         href.classList.add("cta");
-        href.href = "../products/productpage.html?id=" + product.id;
+        href.href = "products/productpage.html?id=" + product.id;
         href.textContent = "View Product";
 
         itemDiv.appendChild(imgLink);
