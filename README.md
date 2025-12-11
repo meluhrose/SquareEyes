@@ -38,7 +38,7 @@ JavaScript
 
 Figma
 
-Git & GitHub
+GitHub
 
 ## 🔧 Getting Started
 
