@@ -94,7 +94,19 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 30px;
   margin: 80px;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+  transition: transform 0.2s;
+}
+
+footer a:hover {
+  transform: scale(1.2);
 }
 
 .fa-brands {
