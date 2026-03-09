@@ -57,6 +57,6 @@ cd SquareEyes
   - Or run a local server using VS Code Live Server 
 
 ## 🤍Author
-Mila Vasshus 
+Mila Cacho 
 
 Contact: meluhrose@gmail.com
